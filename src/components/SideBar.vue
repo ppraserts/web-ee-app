@@ -5,8 +5,9 @@
                 <a href="#">
                     <img src="../assets/logo2.png" class="rounded" />
                     <br/>
-                    ระบบสอบวัดความรู้ก่อนสำเร็จการศึกษา
+                    {{ $t("message.applicationName") }}
                 </a>
+                <Locale />
                 <hr/>
             </li>
             <li v-for="item in items" :key="item.id">
@@ -40,27 +41,32 @@
     </div>
 </template>
 <script>
+import Locale from './Locale.vue'
+
 export default {
   name: 'SideBar',
   props: {
     msg: String
   },
+  components: {
+    Locale
+  },
   data() {
     return {
         items: [
-            { id: 1, title: 'ตรวจสอบข้อมูลนักศึกษา', icon: 'search', hasSubItems: '', to: '/helloworld1' },
-            { id: 2, title: 'ระบบบันทึกข้อมูลพื้นฐาน', icon: 'save', hasSubItems: '', to: '/helloworld2' },
-            { id: 3, title: 'ระบบเปิดรายวิชา', icon: 'edit', hasSubItems: '', to: '/helloworld3' },
-            { id: 4, title: 'ระบบลงทะเบียนสอบ', icon: 'user-edit', hasSubItems: 'dropdown-toggle'
+            { id: 1, title: this.$i18n.t('message.menu_1'), icon: 'search', hasSubItems: '', to: '/helloworld1' },
+            { id: 2, title: this.$i18n.t('message.menu_2'), icon: 'save', hasSubItems: '', to: '/helloworld2' },
+            { id: 3, title: this.$i18n.t('message.menu_3'), icon: 'edit', hasSubItems: '', to: '/helloworld3' },
+            { id: 4, title: this.$i18n.t('message.menu_4'), icon: 'user-edit', hasSubItems: 'dropdown-toggle'
                 , subitems: [
-                    { id: 1, title: 'นำเข้าผู้มีสิทธิ์ลงทะเบียนสอบจากฐานข้อมูลกลาง', icon: 'circle-notch', to: '/helloworld' },
-                    { id: 2, title: 'ตรวจสอบ และยกเลิกเงื่อนไขการตรวจสอบคุณสมบัติผู้มีสิทธิ์ลงทะเบียนสอบวัดความรู้ก่อนสำเร็จการศึกษา', icon: 'circle-notch', to: '/helloworld99' }
+                    { id: 1, title: this.$i18n.t('message.menu_3_1'), icon: 'circle-notch', to: '/import' },
+                    { id: 2, title: this.$i18n.t('message.menu_3_2'), icon: 'circle-notch', to: '/helloworld99' }
                 ] 
             },
-            { id: 5, title: 'ระบบประมวลผล', icon: 'database', hasSubItems: '', to: '/helloworld4' },
-            { id: 6, title: 'รายงานในระบบลงทะเบียนสอบ', icon: 'chart-line', hasSubItems: '', to: '/helloworld5' },
-            { id: 7, title: 'รายงานในระบบประมวลผล', icon: 'chart-bar', hasSubItems: '', to: '/helloworld6' },
-            { id: 8, title: 'กลับสู่ระบบ Exit Exam เดิม', icon: 'sign-out-alt', hasSubItems: '', to: '/helloworld7' },
+            { id: 5, title: this.$i18n.t('message.menu_5'), icon: 'database', hasSubItems: '', to: '/helloworld4' },
+            { id: 6, title: this.$i18n.t('message.menu_6'), icon: 'chart-line', hasSubItems: '', to: '/helloworld5' },
+            { id: 7, title: this.$i18n.t('message.menu_7'), icon: 'chart-bar', hasSubItems: '', to: '/helloworld6' },
+            { id: 8, title: this.$i18n.t('message.menu_8'), icon: 'sign-out-alt', hasSubItems: '', to: '/helloworld7' },
         ]
     }
  }

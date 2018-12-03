@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HelloWorld from '../components/HelloWorld.vue'
+import Import from '../pages/Import.vue'
 /*import ExamTime from '../pages/ExamTime.vue'
 import Import from '../pages/Import.vue'
 import Process from '../pages/Process.vue'
@@ -10,7 +10,7 @@ import Authen from '../pages/Authen.vue'*/
 Vue.use(VueRouter)
 
 const routes = [
-    { path: '/helloworld', component: HelloWorld },
+    { path: '/import', component: Import },
     /*{ path: '/examtime', component: ExamTime },
     { path: '/import', component: Import },
     { path: '/process', component: Process },

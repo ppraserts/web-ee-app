@@ -1,10 +1,11 @@
 <template>
   <div id="app" class="toggled">
+    <PreLoader />
     <SideBar/>
     <div id="page-content-wrapper">
         <div class="container-fluid">
-          <button v-on:click="greet" type="button" id="toggle-sidebar" class="btn btn-default">
-            <icon name="bars"></icon> Toggle Sidebar
+          <button v-on:click="toggleSidebar" type="button" id="toggle-sidebar" class="btn btn-default">
+            <icon name="bars"></icon> {{ $t("message.toggle_sidebar") }}
           </button>
           <router-view/>
         </div>
@@ -13,17 +14,20 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import SideBar from './components/SideBar.vue'
+import PreLoader from './components/PreLoader.vue'
+
 export default {
   name: 'app',
   components: {
-    SideBar
+    SideBar,
+    PreLoader
   },
   methods: {
-    greet: function () {
-      var currentClass = document.getElementById("app").className;
-      document.getElementById("app").className = currentClass === "toggled" ? "" : "toggled";
-    }
+    ...mapActions('applications',[
+      'toggleSidebar'
+    ])
   }
 }
 </script>
@@ -86,5 +90,10 @@ body {
 }
 #toggle-sidebar {
   border: 1px solid #ccc;
+  font-size: 14px;
+  color: #66615B;
+}
+#toggle-sidebar > .fa-icon {
+  margin-top: -5px;
 }
 </style>
