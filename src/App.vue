@@ -7,6 +7,7 @@
           <button v-on:click="toggleSidebar" type="button" id="toggle-sidebar" class="btn btn-default">
             <icon name="bars"></icon> {{ $t("message.toggle_sidebar") }}
           </button>
+          <h1>{{ $t($route.name) }}</h1>
           <router-view/>
         </div>
     </div>

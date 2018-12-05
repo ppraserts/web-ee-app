@@ -16,14 +16,14 @@
                     v-if="item.hasSubItems === ''" 
                     v-bind:to="item.to" 
                     v-bind:class="item.hasSubItems">
-                        <icon v-bind:name="item.icon"></icon><span>{{ item.title }}</span>
+                        <icon v-bind:name="item.icon"></icon><span>{{ $t(item.title) }}</span>
                 </router-link>
                 <router-link 
                     v-if="item.hasSubItems !== ''"
                     to="#" data-toggle="collapse"
                     v-bind:class="item.hasSubItems"
                     v-b-toggle = "'collapse0' + item.id">
-                        <icon v-bind:name="item.icon"></icon><span>{{ item.title }}</span>
+                        <icon v-bind:name="item.icon"></icon><span>{{ $t(item.title) }}</span>
                 </router-link>
                 <b-collapse 
                     v-if="item.hasSubItems != ''" 
@@ -33,7 +33,7 @@
                         v-for="subitem in item.subitems"
                         :key="subitem.id" 
                         v-bind:to="subitem.to">
-                            <icon v-bind:name="subitem.icon"></icon> {{ subitem.title }}
+                            <icon v-bind:name="subitem.icon"></icon> {{ $t(subitem.title) }}
                     </router-link>
                 </b-collapse>
             </li>
@@ -54,19 +54,19 @@ export default {
   data() {
     return {
         items: [
-            { id: 1, title: this.$i18n.t('message.menu_1'), icon: 'search', hasSubItems: '', to: '/helloworld1' },
-            { id: 2, title: this.$i18n.t('message.menu_2'), icon: 'save', hasSubItems: '', to: '/helloworld2' },
-            { id: 3, title: this.$i18n.t('message.menu_3'), icon: 'edit', hasSubItems: '', to: '/helloworld3' },
-            { id: 4, title: this.$i18n.t('message.menu_4'), icon: 'user-edit', hasSubItems: 'dropdown-toggle'
+            { id: 1, title: 'message.menu_1', icon: 'search', hasSubItems: '', to: '/helloworld1' },
+            { id: 2, title: 'message.menu_2', icon: 'save', hasSubItems: '', to: '/helloworld2' },
+            { id: 3, title: 'message.menu_3', icon: 'edit', hasSubItems: '', to: '/helloworld3' },
+            { id: 4, title: 'message.menu_4', icon: 'user-edit', hasSubItems: 'dropdown-toggle'
                 , subitems: [
-                    { id: 1, title: this.$i18n.t('message.menu_3_1'), icon: 'circle-notch', to: '/import' },
-                    { id: 2, title: this.$i18n.t('message.menu_3_2'), icon: 'circle-notch', to: '/helloworld99' }
+                    { id: 1, title: 'message.menu_3_1', icon: 'circle-notch', to: '/import' },
+                    { id: 2, title: 'message.menu_3_2', icon: 'circle-notch', to: '/helloworld99' }
                 ] 
             },
-            { id: 5, title: this.$i18n.t('message.menu_5'), icon: 'database', hasSubItems: '', to: '/helloworld4' },
-            { id: 6, title: this.$i18n.t('message.menu_6'), icon: 'chart-line', hasSubItems: '', to: '/helloworld5' },
-            { id: 7, title: this.$i18n.t('message.menu_7'), icon: 'chart-bar', hasSubItems: '', to: '/helloworld6' },
-            { id: 8, title: this.$i18n.t('message.menu_8'), icon: 'sign-out-alt', hasSubItems: '', to: '/helloworld7' },
+            { id: 5, title: 'message.menu_5', icon: 'database', hasSubItems: '', to: '/helloworld4' },
+            { id: 6, title: 'message.menu_6', icon: 'chart-line', hasSubItems: '', to: '/helloworld5' },
+            { id: 7, title: 'message.menu_7', icon: 'chart-bar', hasSubItems: '', to: '/helloworld6' },
+            { id: 8, title: 'message.menu_8', icon: 'sign-out-alt', hasSubItems: '', to: '/helloworld7' },
         ]
     }
  }
