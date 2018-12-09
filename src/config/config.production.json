@@ -1,0 +1,6 @@
+{
+  "api": {
+      "path": "http://api.mfu.ac.th:8090",
+      "acadyear" : "/reg/ee/acadyear" 
+  }
+}

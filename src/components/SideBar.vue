@@ -55,7 +55,7 @@ export default {
     return {
         items: [
             { id: 1, title: 'message.menu_1', icon: 'search', hasSubItems: '', to: '/helloworld1' },
-            { id: 2, title: 'message.menu_2', icon: 'save', hasSubItems: '', to: '/helloworld2' },
+            { id: 2, title: 'message.menu_2', icon: 'save', hasSubItems: '', to: '/ExamTime' },
             { id: 3, title: 'message.menu_3', icon: 'edit', hasSubItems: '', to: '/helloworld3' },
             { id: 4, title: 'message.menu_4', icon: 'user-edit', hasSubItems: 'dropdown-toggle'
                 , subitems: [

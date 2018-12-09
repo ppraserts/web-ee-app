@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import ExamTime from '../pages/ExamTime.vue'
 import Import from '../pages/Import.vue'
 /*import ExamTime from '../pages/ExamTime.vue'
 import Import from '../pages/Import.vue'
@@ -10,6 +11,8 @@ import Authen from '../pages/Authen.vue'*/
 Vue.use(VueRouter)
 
 const routes = [
+    { path: '/login', name: 'login', component: ExamTime },
+    { path: '/ExamTime', component: ExamTime, name: 'message.menu_2' },
     { path: '/import', component: Import, name: 'message.menu_3_1' },
     /*{ path: '/examtime', component: ExamTime },
     { path: '/import', component: Import },

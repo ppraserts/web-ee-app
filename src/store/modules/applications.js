@@ -1,9 +1,12 @@
+import config from '../../config'
+//import router from '../../router'
 import { i18n } from '../../locale/i18n'
 
 // initial state
 const state = {
   locale: 'th',
-  showPreLoader: false
+  showPreLoader: false,
+  token: 'xxxx'
 }
 
 // getters
@@ -13,6 +16,9 @@ const getters = {
   },
   displayPreLoader: () => {
     return state.showPreLoader
+  },
+  isAuthenticated: (state) => {
+    return !!state.token
   }
 }
 
@@ -23,6 +29,9 @@ const actions = {
   },
   toggleSidebar: (context, payload) => {
     context.commit('toggleSidebar', payload)
+  },
+  initBaseData : (context, payload) => {
+    context.commit('initBaseData', payload)
   }
 }
 
@@ -41,6 +50,9 @@ const mutations = {
   toggleSidebar:  () => {
     var currentClass = document.getElementById("app").className;
     document.getElementById("app").className = currentClass === "toggled" ? "" : "toggled";
+  },
+  initBaseData: () => {
+      alert(config.api.path)
   }
 }
 
