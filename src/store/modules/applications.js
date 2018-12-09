@@ -1,4 +1,4 @@
-import config from '../../config'
+//import config from '../../config'
 //import router from '../../router'
 import { i18n } from '../../locale/i18n'
 
@@ -6,7 +6,7 @@ import { i18n } from '../../locale/i18n'
 const state = {
   locale: 'th',
   showPreLoader: false,
-  token: 'xxxx'
+  token: ''
 }
 
 // getters
@@ -51,8 +51,13 @@ const mutations = {
     var currentClass = document.getElementById("app").className;
     document.getElementById("app").className = currentClass === "toggled" ? "" : "toggled";
   },
-  initBaseData: () => {
-      alert(config.api.path)
+  initBaseData: (state) => {
+    //localStorage.setItem('jwt', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c');
+    let jwt = localStorage.getItem('jwt');
+    if ( jwt !== null) {
+      state.token = jwt
+    }
+    //alert(config.api.path)
   }
 }
 
