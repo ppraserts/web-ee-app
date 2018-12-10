@@ -38,7 +38,7 @@ export default {
 
         let loginRequest =  axios.get(config.api.path + config.api.auth)
 
-        if (process.env.NODE_ENV === "production") {
+        if (!config.isMock) {
             loginRequest = axios.post(config.api.path + config.api.auth, {
                 username: this.username,
                 password: this.password

@@ -38,6 +38,12 @@
                     </router-link>
                 </b-collapse>
             </li>
+            <li v-on:click="logout">
+                <router-link
+                    to="#">
+                    <icon name="sign-out-alt"></icon><span>{{ $t('message.menus.9') }}</span>
+                </router-link>
+            </li>
         </ul>
     </div>
 </template>
@@ -55,20 +61,26 @@ export default {
   data() {
     return {
         items: [
-            { id: 1, title: 'message.menu_1', icon: 'search', hasSubItems: '', to: '/helloworld1' },
-            { id: 2, title: 'message.menu_2', icon: 'save', hasSubItems: '', to: '/ExamTime' },
-            { id: 3, title: 'message.menu_3', icon: 'edit', hasSubItems: '', to: '/helloworld3' },
-            { id: 4, title: 'message.menu_4', icon: 'user-edit', hasSubItems: 'dropdown-toggle'
+            { id: 1, title: 'message.menus.1', icon: 'search', hasSubItems: '', to: '/helloworld1' },
+            { id: 2, title: 'message.menus.2', icon: 'save', hasSubItems: '', to: '/ExamTime' },
+            { id: 3, title: 'message.menus.3', icon: 'edit', hasSubItems: '', to: '/helloworld3' },
+            { id: 4, title: 'message.menus.4', icon: 'user-edit', hasSubItems: 'dropdown-toggle'
                 , subitems: [
-                    { id: 1, title: 'message.menu_3_1', icon: 'circle-notch', to: '/import' },
-                    { id: 2, title: 'message.menu_3_2', icon: 'circle-notch', to: '/helloworld99' }
+                    { id: 1, title: 'message.menus.3_1', icon: 'circle-notch', to: '/import' },
+                    { id: 2, title: 'message.menus.3_2', icon: 'circle-notch', to: '/helloworld99' }
                 ] 
             },
-            { id: 5, title: 'message.menu_5', icon: 'database', hasSubItems: '', to: '/helloworld4' },
-            { id: 6, title: 'message.menu_6', icon: 'chart-line', hasSubItems: '', to: '/helloworld5' },
-            { id: 7, title: 'message.menu_7', icon: 'chart-bar', hasSubItems: '', to: '/helloworld6' },
-            { id: 8, title: 'message.menu_8', icon: 'sign-out-alt', hasSubItems: '', to: '/helloworld7' },
+            { id: 5, title: 'message.menus.5', icon: 'database', hasSubItems: '', to: '/helloworld4' },
+            { id: 6, title: 'message.menus.6', icon: 'chart-line', hasSubItems: '', to: '/helloworld5' },
+            { id: 7, title: 'message.menus.7', icon: 'chart-bar', hasSubItems: '', to: '/helloworld6' },
+            { id: 8, title: 'message.menus.8', icon: 'sign-out-alt', hasSubItems: '', to: '/helloworld7' },
         ]
+    }
+ },
+ methods: {
+    logout() {
+        localStorage.removeItem('jwt');
+        window.location.reload(true)
     }
  }
 }

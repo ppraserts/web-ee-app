@@ -1,4 +1,5 @@
 {
+  "isMock" : true,
   "api": {
       "path": "",
       "auth": "/mockapi/Authen.json",
