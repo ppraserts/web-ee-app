@@ -23,8 +23,8 @@ export default {
   components: {},
   data: () => {
     return { 
-        username : 'NjAzMTAwNjAwMQ==',
-        password : 'Mq==',
+        username : '',
+        password : '',
         isHasError: false,
         msg: ''
     }
@@ -34,11 +34,18 @@ export default {
         let router = this.$router
         let self = this
         self.$store.dispatch('applications/togglePreloader', true)
-        axios.post(config.api.path + config.api.auth, {
-            username: this.username,
-            password: this.password
-        })
-        .then(function (response) {
+
+
+        let loginRequest =  axios.get(config.api.path + config.api.auth)
+
+        if (process.env.NODE_ENV === "production") {
+            loginRequest = axios.post(config.api.path + config.api.auth, {
+                username: this.username,
+                password: this.password
+            })
+        }
+
+        loginRequest.then(function (response) {
             let token = response.data.token
             localStorage.setItem('jwt', token)
             self.isHasError = false
@@ -52,6 +59,7 @@ export default {
             self.msg = error.response.data.msg
             self.$store.dispatch('applications/togglePreloader', false)
         })
+        
     }
   }
 }

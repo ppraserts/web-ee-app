@@ -20,7 +20,8 @@
                 </router-link>
                 <router-link 
                     v-if="item.hasSubItems !== ''"
-                    to="#" data-toggle="collapse"
+                    to="#" 
+                    data-toggle="collapse"
                     v-bind:class="item.hasSubItems"
                     v-b-toggle = "'collapse0' + item.id">
                         <icon v-bind:name="item.icon"></icon><span>{{ $t(item.title) }}</span>

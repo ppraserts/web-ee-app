@@ -35,6 +35,9 @@ router.beforeEach((to, from, next) => {
         next()
       }
     } else {
+      if(to.path === "/") {
+        next('/import')
+      }
       next();
     }
   })
