@@ -12,6 +12,7 @@ import Authen from '../pages/Authen.vue'*/
 Vue.use(VueRouter)
 
 const routes = [
+    { path: '/', name: 'message.login', component: Login },
     { path: '/login', name: 'message.login', component: Login },
     { path: '/ExamTime', component: ExamTime, name: 'message.menu_2', meta: { requiresAuth: true } },
     { path: '/import', component: Import, name: 'message.menu_3_1', meta: { requiresAuth: true } },

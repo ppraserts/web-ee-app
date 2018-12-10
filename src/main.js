@@ -1,7 +1,6 @@
 import 'es6-promise/auto'
 import Vue from 'vue'
 import App from './App.vue'
-import config from './config'
 import store from './store'
 import { i18n } from './locale/i18n'
 
@@ -25,6 +24,5 @@ new Vue({
   i18n,
   store,
   router,
-  config,
   render: h => h(App),
 }).$mount('#app')

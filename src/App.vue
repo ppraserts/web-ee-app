@@ -1,7 +1,7 @@
 <template>
   <div>
+    <PreLoader />
     <div id="app" class="toggled" v-if="isAuthenticated">
-      <PreLoader />
       <SideBar />
       <div id="page-content-wrapper" v-if="isAuthenticated">
           <div class="container-fluid">
@@ -47,6 +47,7 @@ export default {
 <style>
 body {
   overflow-x: hidden;
+  font-size: 1rem !important;
 }
 
 #app {
@@ -104,6 +105,7 @@ body {
   border: 1px solid #ccc;
   font-size: 14px;
   color: #66615B;
+  margin-bottom: 10px;
 }
 #toggle-sidebar > .fa-icon {
   margin-top: -5px;

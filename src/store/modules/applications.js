@@ -1,5 +1,5 @@
 //import config from '../../config'
-//import router from '../../router'
+//import axios from 'axios';
 import { i18n } from '../../locale/i18n'
 
 // initial state
@@ -32,6 +32,9 @@ const actions = {
   },
   initBaseData : (context, payload) => {
     context.commit('initBaseData', payload)
+  },
+  togglePreloader: (context, payload) => {
+    context.commit('togglePreloader', payload)
   }
 }
 
@@ -57,7 +60,9 @@ const mutations = {
     if ( jwt !== null) {
       state.token = jwt
     }
-    //alert(config.api.path)
+  },
+  togglePreloader:  (state, payload) => {
+    state.showPreLoader = payload
   }
 }
 

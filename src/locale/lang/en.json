@@ -16,8 +16,8 @@
     "menu_8" : "กลับสู่ระบบ Exit Exam เดิม",
     "search": "Search",
     "login" : { 
-      "title": "เข้าสูระบบ",
-      "button": "เข้าสูระบบ",
+      "title": "เข้าสู่ระบบ",
+      "button": "เข้าสู่ระบบ",
       "username": "ชื่อผู้ใช้",
       "password": "รหัสผ่าน"
     }

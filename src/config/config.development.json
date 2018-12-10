@@ -1,6 +1,7 @@
 {
   "api": {
       "path": "http://localhost:8080",
+      "auth": "/misapi-test/authen/APILogin",
       "acadyear" : "/mockapi/Acadyear.json" 
   }
 }
